@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:kantin_its/core/configs/theme/app_theme.dart';
 import 'package:kantin_its/core/configs/theme/app_color.dart';
+import 'package:kantin_its/pages/info_kantin.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Kantin ITS',
-      theme: AppTheme.getAppTheme(),
-      home: const KantinPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => KantinPage(),
+        '/info_kantin': (context) => KantinBiologiScreen(), // Pastikan rute benar
+      },
     );
   }
 }
+
 
 class KantinPage extends StatelessWidget {
   const KantinPage({super.key});
@@ -28,71 +29,100 @@ class KantinPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: AppTheme.getGradientBackground(),
-        child: const Column(
+        child: Column(
           children: [
-            Logo(),
-            KantinText(),
-            SearchBar(),
-            SizedBox(height: 20),
-            ScrollableButtonSection(),
-            KantinCard(title: "Kantin 1", description: "description")
+            const Logo(),
+            const KantinText(),
+            const SearchBar(),
+            const SizedBox(height: 20),
+            const ScrollableButtonSection(),
+             SizedBox(
+              width: double.infinity, // Memenuhi lebar layar
+              child: KantinCard(
+                title: "Kantin 1",
+                description: "description",
+                onPressed: () {
+                  Navigator.pushNamed(context, '/info_kantin');
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-class KantinCard extends StatelessWidget {
+class KantinCard extends StatefulWidget {
   final String title;
   final String description;
+  final VoidCallback onPressed;
 
   const KantinCard({
-    super.key,
+    Key? key,
     required this.title,
     required this.description,
-  });
+    required this.onPressed,
+  }) : super(key: key);
 
-@override
-Widget build(BuildContext context) {
-  return SizedBox(
-    width: 328,
-    height: 139,
-    child: Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-                color: AppColors.accentDarkColor,
-              ),
+  @override
+  _KantinCardState createState() => _KantinCardState();
+}
+
+class _KantinCardState extends State<KantinCard> {
+  bool _isPressed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) {
+        setState(() {
+          _isPressed = true;
+        });
+      },
+      onTapUp: (_) {
+        setState(() {
+          _isPressed = false;
+        });
+        widget.onPressed();
+      },
+      onTapCancel: () {
+        setState(() {
+          _isPressed = false;
+        });
+      },
+      child: AnimatedScale(
+        scale: _isPressed ? 0.95 : 1.0, // Mengecilkan sedikit saat ditekan
+        duration: const Duration(milliseconds: 100),
+        child: Card(
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          elevation: 4,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(widget.description),
+              ],
             ),
-            const SizedBox(height: 4), // Jarak antara teks dan garis
-            Container(
-              width: 100, // Atur panjang garis sesuai kebutuhan
-              height: 2, // Ketebalan garis
-              color: AppColors.accentDarkColor, // Warna garis
-            ),
-            const SizedBox(height: 8),
-            Expanded(
-              child: Text(
-                description,
-                style: const TextStyle(fontSize: 14),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 4,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
-}}
+    );
+  }
+}
+
+
 
 class ScrollableButtonSection extends StatefulWidget {
   const ScrollableButtonSection({Key? key}) : super(key: key);
