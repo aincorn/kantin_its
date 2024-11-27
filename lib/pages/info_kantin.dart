@@ -17,91 +17,123 @@ class MyApp extends StatelessWidget {
 class KantinBiologiScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Mengambil nama kantin dari arguments
+    final String kantinName =
+        ModalRoute.of(context)?.settings.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.brown),
-          onPressed: () {},
-        ),
+        title: Text('$kantinName'),
+        backgroundColor: Colors.brown, // Set background color for AppBar
+        elevation: 4,
       ),
-      body: Container(
-        decoration: AppTheme.getGradientBackground(), // Set the background color to red
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                "Kantin Biologi",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.brown,
-                ),
-              ),
-            ),
-            Wrap(
-              spacing: 8.0,
-              runSpacing: 8.0,
-              alignment: WrapAlignment.center,
-              children: List.generate(4, (index) => _buildLabel()),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  return _buildFoodCard();
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
+      body: FutureBuilder(
+        // Misalnya kita fetch data terkait kantin berdasarkan nama kantin
+        future: fetchDataForKantin(
+            kantinName), // Fungsi untuk mengambil data kantin
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (!snapshot.hasData) {
+            return Center(child: Text('Tidak ada data untuk $kantinName'));
+          } else {
+            var data = snapshot.data;
+            return Container(
+              decoration: AppTheme.getGradientBackground(), // Set background
+              child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      '$kantinName',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
+                      ),
+                    ),
+                  ),
+                  // Menampilkan daftar makanan yang didapatkan dari data
                   Expanded(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                    child: ListView.builder(
+                      itemCount: data?['menu'].length,
+                      itemBuilder: (context, index) {
+                        return _buildFoodCard(data?['menu'][index]);
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.brown,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 12.0),
+                              child: Text(
+                                "Lihat Peta",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0),
-                        child: Text(
-                          "Lihat Peta",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),    
-          ],
-        ),
+            );
+          }
+        },
       ),
     );
   }
 
-  Widget _buildLabel() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      margin: EdgeInsets.only(bottom: 8), // Add margin to the bottom
-      decoration: BoxDecoration(
-        color: Colors.brown[100],
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        'Label',
-        style: TextStyle(color: Colors.brown),
-      ),
-    );
+  // Fungsi untuk fetch data terkait kantin, bisa diganti dengan panggilan API
+  Future<Map<String, dynamic>> fetchDataForKantin(String kantinName) async {
+    await Future.delayed(Duration(seconds: 2)); // Simulasi delay
+    // Simulasi data API
+    return {
+      'kantinName': kantinName,
+      'menu': [
+        {
+          'name': 'Sego Njamoer',
+          'priceRange': '10k - 20k',
+          'image':
+              'https://img.freepik.com/premium-vector/nasi-goreng-illustration-indonesian-food-with-cartoon-style_44695-648.jpg', // Ganti dengan URL gambar yang sesuai
+          'tags': ['Halal', 'Pedas']
+        },
+        {
+          'name': 'Mie Goreng',
+          'priceRange': '15k - 25k',
+          'image':
+              'https://img.freepik.com/premium-vector/nasi-goreng-illustration-indonesian-food-with-cartoon-style_44695-648.jpg', // Ganti dengan URL gambar yang sesuai
+          'tags': ['Halal', 'Sedang']
+        },
+        {
+          'name': 'Ayam Penyet',
+          'priceRange': '20k - 30k',
+          'image':
+              'https://img.freepik.com/premium-vector/nasi-goreng-illustration-indonesian-food-with-cartoon-style_44695-648.jpg', // Ganti dengan URL gambar yang sesuai
+          'tags': ['Halal', 'Pedas']
+        },
+      ]
+    };
   }
 
-  Widget _buildFoodCard() {
+  // Widget untuk menampilkan menu makanan dalam bentuk card
+  Widget _buildFoodCard(Map<String, dynamic> food) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Card(
@@ -116,7 +148,7 @@ class KantinBiologiScreen extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.network(
-                  'https://via.placeholder.com/80', // Ganti dengan URL gambar yang sesuai
+                  food['image'], // Gambar makanan
                   width: 80,
                   height: 80,
                   fit: BoxFit.cover,
@@ -128,7 +160,7 @@ class KantinBiologiScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sego Njamoer',
+                      food['name'],
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -137,13 +169,15 @@ class KantinBiologiScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      'Kisaran Harga: 10k - 20k',
+                      'Kisaran Harga: ${food['priceRange']}',
                       style: TextStyle(color: Colors.brown[300]),
                     ),
                     Wrap(
                       spacing: 8.0,
                       runSpacing: 4.0,
-                      children: List.generate(2, (index) => _buildLabel()),
+                      children: List.generate(food['tags'].length, (index) {
+                        return _buildLabel(food['tags'][index]);
+                      }),
                     ),
                   ],
                 ),
@@ -151,6 +185,22 @@ class KantinBiologiScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  // Widget untuk label kategori makanan
+  Widget _buildLabel(String label) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      margin: EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        color: Colors.brown[100],
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(color: Colors.brown),
       ),
     );
   }

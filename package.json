@@ -1,0 +1,11 @@
+{
+    "name": "my-project",
+    "version": "1.0.0",
+    "description": "Contoh proyek untuk menjalankan perintah terminal",
+    "main": "index.js",
+    "scripts": {
+        "start": "flutter run"
+    },
+    "author": "Nama Anda",
+    "license": "ISC"
+}

@@ -14,53 +14,100 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => KantinPage(),
-        '/info_kantin': (context) => KantinBiologiScreen(), // Pastikan rute benar
+        '/info_kantin': (context) => KantinBiologiScreen(),
       },
     );
   }
 }
 
-
 class KantinPage extends StatelessWidget {
   const KantinPage({super.key});
+
+  // Fungsi untuk mengambil data kantin
+  Future<List<String>> fetchKantinData() async {
+    await Future.delayed(
+        Duration(seconds: 2)); // Simulasi delay seperti API request
+    return [
+      "Kantin Biologi",
+      "Kantin Teknik Informatika",
+      "Kantin FST",
+    ]; // Data statis yang akan digunakan
+  }
+
+  // Fungsi untuk menyegarkan data
+  Future<void> _refreshKantinData(BuildContext context) async {
+    await Future.delayed(
+        Duration(seconds: 2)); // Simulasi pengambilan data ulang
+    // Biasanya, kita akan memanggil fetchKantinData() di sini untuk memuat ulang data dari API
+    // Mengupdate UI setelah refresh
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: AppTheme.getGradientBackground(),
-        child: Column(
-          children: [
-            const Logo(),
-            const KantinText(),
-            const SearchBar(),
-            const SizedBox(height: 20),
-            const ScrollableButtonSection(),
-             SizedBox(
-              width: double.infinity, // Memenuhi lebar layar
-              child: KantinCard(
-                title: "Kantin 1",
-                description: "description",
-                onPressed: () {
-                  Navigator.pushNamed(context, '/info_kantin');
+        child: RefreshIndicator(
+          onRefresh: () => _refreshKantinData(context), // Fungsi refresh
+          child: ListView(
+            children: [
+              const Logo(),
+              const KantinText(),
+              const SearchBar(),
+              const SizedBox(height: 20),
+              const ScrollableButtonSection(),
+              FutureBuilder<List<String>>(
+                future: fetchKantinData(), // Memanggil fungsi fetchKantinData
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                        child:
+                            CircularProgressIndicator()); // Tampilkan loading saat menunggu data
+                  } else if (snapshot.hasError) {
+                    return Text(
+                        'Error: ${snapshot.error}'); // Menampilkan error jika ada
+                  } else if (!snapshot.hasData) {
+                    return const Text('Tidak ada data');
+                  } else {
+                    // Data sudah tersedia, kita akan menampilkan KantinCard untuk setiap kantin
+                    var kantinList = snapshot.data!;
+                    return Column(
+                      children: kantinList.map((kantinName) {
+                        return SizedBox(
+                          width: double.infinity,
+                          child: KantinCard(
+                            title: kantinName,
+                            onPressed: () {
+                              // Menavigasi ke halaman info_kantin dengan nama kantin
+                              Navigator.pushNamed(
+                                context,
+                                '/info_kantin',
+                                arguments:
+                                    kantinName, // Mengirimkan nama kantin
+                              );
+                            },
+                          ),
+                        );
+                      }).toList(),
+                    );
+                  }
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 class KantinCard extends StatefulWidget {
   final String title;
-  final String description;
   final VoidCallback onPressed;
 
   const KantinCard({
     Key? key,
     required this.title,
-    required this.description,
     required this.onPressed,
   }) : super(key: key);
 
@@ -70,6 +117,19 @@ class KantinCard extends StatefulWidget {
 
 class _KantinCardState extends State<KantinCard> {
   bool _isPressed = false;
+
+  List<String> buttonLabels = [
+    "Makanan 1",
+    "Makanan 2",
+    "Makanan 3",
+    "Makanan 4",
+    "Makanan 5",
+    "Makanan 1",
+    "Makanan 2",
+    "Makanan 3",
+    "Makanan 4",
+    "Makanan 5"
+  ]; // Gantilah dengan data dari database nanti
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +167,22 @@ class _KantinCardState extends State<KantinCard> {
                 Text(
                   widget.title,
                   style: const TextStyle(
-                    fontSize: 18,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: AppColors.textThirdColor,
                   ),
                 ),
-                const SizedBox(height: 8),
-                Text(widget.description),
+                const Divider(
+                  color: AppColors.textThirdColor,
+                  thickness: 3,
+                ),
+                DynamicButtonList(
+                  buttonLabels: buttonLabels, // Data dinamis untuk tombol
+                  onButtonPressed: (label) {
+                    print("Tombol $label ditekan");
+                    // Tindakan lebih lanjut bisa ditambahkan di sini, seperti navigasi atau operasi lainnya
+                  },
+                ),
               ],
             ),
           ),
@@ -122,7 +192,40 @@ class _KantinCardState extends State<KantinCard> {
   }
 }
 
+class DynamicButtonList extends StatelessWidget {
+  final List<String> buttonLabels; // Daftar label tombol
+  final Function(String) onButtonPressed; // Callback saat tombol ditekan
 
+  const DynamicButtonList({
+    Key? key,
+    required this.buttonLabels, // Data daftar tombol
+    required this.onButtonPressed, // Aksi saat tombol ditekan
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap:
+          true, // Menggunakan shrinkWrap agar GridView tidak mengganggu ukuran widget lainnya
+      physics:
+          NeverScrollableScrollPhysics(), // Agar grid tidak bisa digulir secara mandiri
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 4, // Menentukan jumlah kolom
+        crossAxisSpacing: 8, // Spasi antar kolom
+        mainAxisSpacing: 8, // Spasi antar baris
+        childAspectRatio: 2.5, // Rasio antara lebar dan tinggi item
+      ),
+      itemCount: buttonLabels.length, // Jumlah item tombol yang ditampilkan
+      itemBuilder: (context, index) {
+        return CustomButton(
+          text: buttonLabels[index],
+          isActive: false,
+          onPressed: () => onButtonPressed(buttonLabels[index]),
+        );
+      },
+    );
+  }
+}
 
 class ScrollableButtonSection extends StatefulWidget {
   const ScrollableButtonSection({Key? key}) : super(key: key);
@@ -228,16 +331,19 @@ class KantinText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'Kantin ITS',
-      style: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: AppColors.accentColor,
+    return const Center(
+      child: Text(
+        'Kantin ITS',
+        style: TextStyle(
+          fontSize: 32,
+          fontWeight: FontWeight.bold,
+          color: AppColors.accentColor,
+        ),
       ),
     );
   }
 }
+
 
 class SearchBar extends StatelessWidget {
   const SearchBar({super.key});
@@ -264,7 +370,10 @@ class SearchBar extends StatelessWidget {
           filled: true,
           fillColor: AppColors.accentSearchColor,
           hintText: 'Cari makanan atau minuman',
+          hintStyle: TextStyle(color: Colors.white),
         ),
+        style: TextStyle(
+            color: Colors.white), // Mengubah warna font inputan menjadi putih
       ),
     );
   }
