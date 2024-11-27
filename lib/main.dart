@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'core/configs/theme/app_theme.dart';
 import 'pages/kantin.dart';
 import 'pages/info_kantin.dart';
 
