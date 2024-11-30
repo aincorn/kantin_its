@@ -55,4 +55,18 @@ class AppTheme {
       ),
     );
   }
+
+  static BoxDecoration getLinearGradient() {
+    return const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          Color(0xFFFFFFFF),  // Replace hex color with 0xFF prefixed to make it a valid Color object
+          Color(0xFFFEF8E9),
+        ],
+        stops: [0,1],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
+    );
+  }
 }

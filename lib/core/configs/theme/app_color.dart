@@ -12,6 +12,14 @@ class AppColors {
   static const Color accentDarkColor = Color.fromRGBO(198, 113, 0, 1);
   static const Color accentSearchColor = Color.fromRGBO(149,104,75,79);
 
+  // Secondary colors
+  static const Color buttonColor = Color(0xFF95684B);
+  static const Color buttonLabelBackgroundColor = Color(0xFFD29E58);
+  static const Color buttonLabelBackgroundColorCreme = Color(0xFFEED8B7);
+  static const Color buttonLabelColorText = Color(0xFF95684B);
+
+  
+
   // Text colors
   static const Color textPrimaryColor = Color(0xFF212121);
   static const Color textSecondaryColor = Color(0xFF757575);

@@ -1,0 +1,1630 @@
+canteen_id,canteen_name,Latitude,Longitude
+1,Kantin Teknik Mesin,-7.284595989250741,112.7962722194945
+2,Kantin Teknik Fisika,-7.284141493058052,112.79610283079069
+3,Kantin Teknik Informatika,-7.279975035244168,112.79702237971519
+4,Kantin Biologi,-7.285683514108417,112.79427714983439
+5,Kantin Perpustakaan,-7.281566032372883,112.79533886973782
+6,Kantin Teknik Kimia,-7.2826086619888075,112.79723638365091
+7,Kantin Studi Pembangunan,-7.282578831821224,112.79520952146893
+8,Kantin Geomatika,-7.280145125792521,112.79447121797224
+9,Kantin Teknik Sipil,-7.280021194589083, 112.79312864200742
+10,Kantin Arstitektur,-7.280377640064933,112.79403452071928
+11,Kantin Pusat,-7.283857780514062,112.7939932739927
+,,,
+tenant_id,canteen_id,tenant_name,tenant_description
+1,1,Warung Mama,null
+2,1,Chimy,null
+3,1,Kantin Pak Sapi'i,null
+4,1,Kantin Ibu Ida,null
+5,1,Soto Ayam Cak Dul,null
+6,1,Es Teh,null
+7,2,Warung Munawaroh,null
+8,2,Fresh Fruit Juice,null
+9,2,Warung Bakso Tenan,null
+10,2,Kantin Bu Tanti,null
+11,2,Resto Barcelle,null
+12,3,Mak Nanun,null
+13,3,Warung Bu Sol,null
+14,3,Omben's IF,null
+15,4,Pak Misnun Powder Drink,null
+16,4,Soto Berkah Pak Abu,null
+17,4,Bakso Pak Bejo,null
+18,4,Dapur Bu Mami,null
+19,5,Minuman,null
+20,5,Nasi Pecel Umik,null
+21,5,BURGER,null
+22,5,My Rice Bowl,null
+23,5,Nyemil'o,null
+24,5,Mie Pangsit Enakk,null
+25,5,Teh Poci,null
+26,6,Kress Nyuss,null
+27,6,Minuman,null
+28,7,THUNUK,null
+29,7,Warung Pak No,null
+30,7,Waroeng Anggrek,null
+31,7,Mie Ayam Madura,null
+32,7,Bakso Pak Parlin,null
+33,8,K & Q Corner,null
+34,8,Penyetan Cak Bas,null
+35,8,Laziz,null
+36,8,Minuman Asli Cokelat,null
+37,8,Soto Ayam & Bakso Artomoro,null
+38,8,Kedai Clara,null
+39,9,Nasi Rames Bu Tiok,null
+40,9,Chioci Kitchen,null
+41,9,Kulkas,null
+42,9,Dapoer R??,null
+43,10,Kedai Tiga Putra,null
+44,10,Bakso Pak Di,null
+45,11,Drink House,Spesialis Minuman
+46,11,Dream Waffle,Spesialis Waffle
+47,11,Dimsum Surabaya,Spesialis Dimsum & Kebab
+48,11,Mie Aceh Bohhate,Spesialis Mie Aceh
+49,11,Dapur Mbak Yuli,Spesialis Nasi Madura & Rawon
+50,11,Mie Seblak Suki,Spesialis Seblak & Suki
+51,11,Bakso Cak Eko,Spesialis Bakso
+52,11,Soto Ayam Barokah,Spesialis Soto
+53,11,Onigiri Jamur,Spesialis Olahan Jamur
+54,11,Nasi Kuning Karindangan,Spesialis Nasi Kuning & Nasi Uduk
+55,11,Pipylala,Spesialis Pisang Goreng
+56,11,Bentok,Spesialis Nasi Bebek & Jasuke
+57,11,Kenary Bakery,Spesialis Kue
+58,11,Lumpia Semarang Om Dewo,Spesialis Lumpia & Gorengan
+59,11,Dapoer Oeti,Spesialis Jajanan Pasar
+60,11,Pempek Berlian,Spesialis Pempek
+61,11,kukukriyuuk,Spesialis Ayam Kriuk
+62,11,Dian Catering,Spesialis Nasi Campur
+63,11,Tahu Tek dan Lontong Cak Aris,Spesialis Tahu Tek & Pecel
+64,11,Dapur Bahrame,Spesialis Nasi Goreng
+65,11,Mie Ayam Solo Acil,Spesialis Mie Ayam
+66,11,Fresh Bandung Cincau,Spesialis Cincau
+67,11,Gado Gado Sekawan,Spesialis Gado Gado
+68,11,Dunia Jus,Spesialis Jus
+69,11,Sambelane Mbok De,Spesialis Penyetan
+70,11,Rumah Kopi Nusantara,Spesialis Kopi
+,,,
+menu_id,tenant_id,menu_name,menu_price
+1,1,Nasi Campur ,13000
+2,2,Crispy Chicken ,15000
+3,2,Crispy Potato M,9000
+4,2,Crispy Potato L,13000
+5,3,Nasi Paket 1,13000
+6,3,Nasi Paket 2,13000
+7,3,Nasi Krengsengan Daging,13000
+8,4,Nasi Penyet Ayam,13000
+9,4,Nasi Penyet Udang ,13000
+10,4,Nasi Penyet Ikan Laut,13000
+11,4,Nasi Penyet Ikan Pe,13000
+12,4,Nasi Penyet Telur,11000
+13,4,Nasi Penyet Wader,11000
+14,4,Nasi Rawon,13000
+15,4,Nasi Rawon + Telur Asin,17000
+16,5,Soto Ayam ,15000
+17,5,Ayam Bumbu Hitam,13000
+18,6,Taro,8000
+19,6,Es Teh Jumbo,6000
+20,6,Teh Jeruk Nipis,6000
+21,6,Choco Classic,8000
+22,6,Leci,8000
+23,6,Black coco,8000
+24,6,Red Velvet,8000
+25,6,Green Tea,8000
+26,6,Avocado,8000
+27,6,Thai Milk Tea,8000
+28,6,Strawberry,8000
+29,6,Capucino,8000
+30,7,Nasi Rawon,13000
+31,7,Nasi Soto + Telur,12000
+32,7,Nasi Soto Daging ,13000
+33,7,Nasi Lodeh Ayam ,12000
+34,7,Nasi Lodeh Telur ,10000
+35,7,Nasi Lodeh Pindang,10000
+36,7,Telur Asin ,5000
+37,8,Jus Nanas,9000
+38,8,Jus Jambu,9000
+39,8,Jus Tomat,9000
+40,8,Jus Jeruk,9000
+41,8,Jus Wortel,9000
+42,8,Jus Sirsak,9000
+43,8,Jus Semangka,9000
+44,8,Jus Melon,9000
+45,8,Jus Pisang,9000
+46,8,Jus Belimbing,9000
+47,8,Jus Naga,9000
+48,8,Jus Apel,9000
+49,8,Jus Strawberry,9000
+50,8,Jus Alpukat,11000
+51,8,Jus Mangga,11000
+52,8,Jus Mix,null
+53,9,Bakso Ori,12000
+54,9,Bakso Campur 1,12000
+55,9,Bakso Campur 2,12000
+56,9,Tambah Pentol/Tahu/Siomay,1500
+57,9,Mie Ayam Ori,12000
+58,10,Club/Prima,4000
+59,10,Kopi ABC,4500
+60,10,Kopi Golda,5000
+61,10,Milku,5000
+62,10,Teh Pucuk,5000
+63,10,Floridina,5000
+64,10,S Tee,5000
+65,10,ISO+,5000
+66,10,Teh Kotak,5000
+67,10,Fruit Tea,6000
+68,10,Teh Botol Sosro,6000
+69,10,Teh Kotak UJ,6000
+70,10,Tebs,6000
+71,10,Sari Kacang Hijau,7000
+72,10,Fanta,7000
+73,10,Sprite,7000
+74,10,Coca Cola,7000
+75,10,Pulpy,7000
+76,10,Susu Ultramilk 250 ml,8000
+77,10,Susu Ultra 200 ml,7000
+78,10,Kopiko 78,7500
+79,10,Kopiko Lucky Day,7500
+80,10,CoolTime,5000
+81,10,Toracafe,5000
+82,10,Nipis Madu,5500
+83,10,Coffee,null
+84,10,Es Teh ,5000
+85,11,Nasi Babat + Paru,12000
+86,11,Nasi Bebek,12000
+87,11,Nasi Cumi Hitam,12000
+88,11,Nasi Ayam Goreng,12000
+89,11,Nasi Telur Dadar,12000
+90,11,Sate Taichan 5 tusuk + Nasi,12000
+91,11,Nasi Putih,4000
+92,11,Kerupuk Udang,1500
+93,11,Koi Goreng,4000
+94,12,Pangsit Mie Ayam,14000
+95,12,Pangsit Mie Ayam Bakso,16000
+96,12,Pangsit Mie Ayam Ceker,16000
+97,12,"Pangsit Mie Komplit (bakso dan ceker)",18000
+98,12,Kwetiaw Goreng,15000
+99,12,Siomay,14000
+100,12,Siomay Goreng,16000
+101,12,Bakso,14000
+102,12,Mie Ruwet,12000
+103,12,Nasi Goreng ,12000
+104,12,Nasi Goreng Telur,13000
+105,12,Nasi Goreng Ayam,15000
+106,12,Nasi Goreng spesial,18000
+107,12,Nasi Goreng Geprek,17000
+108,12,Nasi Geprek Ayam,15000
+109,12,Nasi Geprek Ayam Saus Telur Asin,17000
+110,12,Nasi Geprek Ayam Mozzarella,17000
+111,12,Nasi Geprek Telur,11000
+112,12,Nasi Geprek Jeroan,13000
+113,12,Nasi Geprek Ayam Rempah,18000
+114,12,Nasi Campur ,10000
+115,12,Nasi Krawu Ayam,13000
+116,12,Nasi Krawu Daging,16000
+117,12,Nasi Uduk,13000
+118,12,Nasi Ayam lodoh,10000
+119,12,Kerupuk Bungkus,3000
+120,13,Nasi Madura,16000
+121,13,Nasi Serpang ,18000
+122,13,Nasi Kuning,14000
+123,13,Nasi Babat Madura,13000
+124,13,Nasi Gila,12000
+125,13,Nasi Rawon,16000
+126,13,Nasi Opor,10000
+127,13,Nasi Ayam Rica-rica,10000
+128,13,Nasi Pecel + Peyek,9000
+129,13,Nasi Cumi Hitam,10000
+130,13,Chicken Steak Crispy,13000
+131,13,Chicken Steak Grilled,13000
+132,13,Chicken Blackpapper,15000
+133,13,Nasi Soto Daging ,17000
+134,13,Nasi Soto Ayam,15000
+135,13,Soto Mie Bogor,17000
+136,13,Tahu telor,14000
+137,13,Tahu tek,12000
+138,13,Ketropak,14000
+139,13,Gado gado,14000
+140,13,Batagor ,6000
+141,13,Nasi Putih,3000
+142,13,Ayam Goreng,5000
+143,13,Telor Ceplok,3000
+144,13,Telor Dadar,3000
+145,13,Bakwan Jagung,1000
+146,13,Tahu/Tempe,1000
+147,14,Es teh/teh hangat,6000
+148,14,Black Coffee,7000
+149,14,Es Jeruk/Jeruk hangat,6000
+150,14,Ice Blend Green Tea Latte,12000
+151,14,Ice Blend Chocolate,12000
+152,14,Ice Blend Cappucino,12000
+153,14,Ice Blend Red Velvet,12000
+154,15,Ice/Hot Teh manis,5000
+155,15,Ice/Hot Jeruk manis,6000
+156,15,Ice/Hot Good Day freeze,7000
+157,15,Ice/Hot Milo,6000
+158,15,Ice/Hot Pop Ice,6000
+159,15,Ice/Hot Nutrisari,5000
+160,15,Ice/Hot Susu,6000
+161,15,Wedang Jahe,6000
+162,15,Club botol,4000
+163,15,Kopi Kapal Api,5000
+164,15,White Coffe,5000
+165,15,Kopi hitam,5000
+166,15,kopi Susu,6000
+167,15,Kopi ABC,5000
+168,16,Soto Ayam,13000
+169,16,Soto Ayam + Kerupuk,14000
+170,16,Soto Ayam Special,15000
+171,16,Soto Ayam Special + Kerupuk,16000
+172,17,Pentol kecil,1000
+173,17,Tahu,1000
+174,17,Siomay,1000
+175,17,Gorengan,1000
+176,17,Pentol kasar,2000
+177,17,Pentol keju,2000
+178,17,Pentol puyuh,2000
+179,18,Aneka Sayur,null
+180,18,Daging,15000
+181,18,Ayam Goreng,13000
+182,18,Rempelo Ati,13000
+183,18,Usus Krispy,12000
+184,18,Udang Krispy,12000
+185,18,Telor,10000
+186,18,Tempe,8000
+187,19,Air Mineral Aqua,5000
+188,19,Air Mineral Le mineral,5000
+189,19,Air Mineral Club,4000
+190,19,Air Mineral Prima,4000
+191,19,Kopi ABC,5000
+192,19,Kopi Golda,5000
+193,19,Kopiko 78,8000
+194,19,Kopiko Lucky Day,8000
+195,19,Nescafe,9000
+196,19,Toracafe,6500
+197,19,Susu Milku,5000
+198,19,Susu Milo,8000
+199,19,Susu Nutriboost,8500
+200,19,Susu Kedele,6000
+201,19,Susu Ultra,8500
+202,19,Fruit Tea botol,8500
+203,19,Fruit Tea genggam,4000
+204,19,TEBS botol,9000
+205,19,TEBS kaleng,7000
+206,19,Teh botol kotak,5500
+207,19,Teh Ultra kotak,5500
+208,19,Teh Ichi Ocha,4500
+209,19,Teh Pucuk,4500
+210,19,Coca Cola,6500
+211,19,Fanta,6500
+212,19,Sprite,6500
+213,19,CoolTime,6500
+214,19,Cimory,11000
+215,19,Hidrococo,9000
+216,19,Kratingdaeng,8000
+217,19,Larutan penyegar,5000
+218,19,Mizone,6500
+219,19,Nipis Madu,6500
+220,19,Orange Water,10000
+221,19,You C 100,9000
+222,19,Es Jelly,7000
+223,19,Pocari,10000
+224,19,Sarkijo,6500
+225,20,Nasi Pecel Ayam,15000
+226,20,Nasi Pecel Daging,15000
+227,20,Nasi Pecel Tempe,10000
+228,20,Nasi Pecel Sarden,12000
+229,20,Nasi Pecel Telur (dadar/ceplok/bali),12000
+230,20,Nasi Pecel Paru,15000
+231,20,Peyek,2000
+232,20,Aneka sate,3000
+233,21,Mini Hamburger,5000
+234,21,Hamburger,8000
+235,21,Cheese Hamburger,10000
+236,21,Chicken Burger,10000
+237,21,Chicken Cheese,12000
+238,21,Beef Burger,10000
+239,21,Beef Cheese Burger,12000
+240,21,Sweet Burger Oreo,8000
+241,21,Sweet Burger Red Velvet,8000
+242,21,Sweet Burger Beng Beng,8000
+243,21,Sweet Burger Milo,8000
+244,21,Sweet Burger Chocomaltine,8000
+245,21,Hotdog Original,10000
+246,21,Cheese Hotdog,12000
+247,22,Rica-rica Daging,15000
+248,22,Oseng Paru Pedas,15000
+249,22,Oseng Tuna Kemangi,15000
+250,22,Ayam Suwir Pedas,15000
+251,23,Paket Siomay,13000
+252,23,Paket Pentol,9500
+253,23,Paket Crispy,11000
+254,23,Paket Gorengan,10000
+255,24,Mie Pangsit Original,13000
+256,24,Mie Pangsit Pentol,15000
+257,24,Mie Pangsit Telur,17000
+258,24,Mie Pangsit Tahu,17000
+259,24,Mie Pangsit Siomay,17000
+260,24,Mie Pangsit Ceker,15000
+261,24,Dimsum,3000
+262,24,Kerupuk kecil,1000
+263,24,Kerupuk ikan,2000
+264,24,Kerupuk pangsit,2000
+265,24,Pentol biasa K,1000
+266,24,Pentol biasa B,3000
+267,24,Pentol mercon,3000
+268,24,Pentol jamur,4000
+269,24,Pentol Urat Jumbo,5000
+270,24,Pentol puyuh,5000
+271,24,Pentol keju,5000
+272,24,Tahu bakso,4000
+273,24,Siomai,4000
+274,24,Telur rebus,4000
+275,24,Ceker,2000
+276,24,Kepala Ayam,3000
+277,25,Jasmine Tea cup reguler,6000
+278,25,vanilla Tea cup reguler,6000
+279,25,Milk Tea cup reguler,9000
+280,25,Choco Tea cup reguler,9000
+281,25,Honey Lemon Tea cup reguler,9000
+282,25,Black Current Tea cup reguler,9000
+283,25,Apple Tea cup reguler,9000
+284,25,Mango Tea cup reguler,9000
+285,25,Lychee Tea cup reguler,9000
+286,25,Orange Tea cup reguler,9000
+287,25,Capucino Tea cup jumbo puas,13000
+288,25,Milo Tea cup jumbo puas,13000
+289,25,Oreo Milk Tea cup jumbo puas,13000
+290,25,Taro Milk Tea cup jumbo puas,13000
+291,25,Red Velvet Milk Tea cup jumbo puas,13000
+292,25,Thai Tea cup jumbo puas,13000
+293,25,Green Tea cup jumbo puas,13000
+294,26,Paha Bawah,10000
+295,26,Sayap,10000
+296,26,Dada Kecil,10000
+297,26,Paha Atas,13000
+298,26,Dada Besar,13000
+299,26,Nasi + Paha Bawah,13000
+300,26,Nasi + Sayap,13000
+301,26,Nasi + Dada Kecil,13000
+302,26,Nasi + Paha Atas,16000
+303,26,Nasi + Dada Besar,16000
+304,26,Nasi + Telur Ceplok,8000
+305,26,Paha Bawah Geprek Cheese / BBQ / Blackpepper,12000
+306,26,Sayap Geprek Cheese / BBQ / Blackpepper,12000
+307,26,Dada Kecil Geprek Cheese / BBQ / Blackpepper,12000
+308,26,Paha Atas Geprek Cheese / BBQ / Blackpepper,15000
+309,26,Dada Besar Geprek Cheese / BBQ / Blackpepper,15000
+310,26,Nasi + Paha Bawah Geprek Cheese / BBQ / Blackpepper,15000
+311,26,Nasi + Sayap Geprek Cheese / BBQ / Blackpepper,15000
+312,26,Nasi + Dada Kecil Geprek Cheese / BBQ / Blackpepper,15000
+313,26,Nasi + Paha Atas Geprek Cheese / BBQ / Blackpepper,17000
+314,26,Nasi + Dada Besar Geprek Cheese / BBQ / Blackpepper,17000
+315,26,Nasi + Telur Ceplok Geprek Cheese / BBQ / Blackpepper,10000
+316,26,Nasi,4000
+317,26,Sambal,2000
+318,27,Fruit Tea Markisa 350ml,5000
+319,27,Good Day Cappucino 250ml,7500
+320,27,Kopi Golda,4000
+321,27,Kopi 78C 240ml,7500
+322,27,Susu Cimory,7500
+323,27,Susu Ultra 200ml,6500
+324,27,Teh Pucuk,4500
+325,27,Teh Kotak 240ml,5000
+326,27,Yoghurt Cimory,10000
+327,27,Susu Sari Kedelai,7000
+328,27,Sinom,7000
+329,27,Jus Buah,10000
+330,27,Floridina,4500
+331,28,Es Teh Jumbo,7000
+332,28,Green Tea,10000
+333,28,Cappucino,10000
+334,28,Caramel Machiato,10000
+335,28,Tiramisu,10000
+336,28,Lychee Squash,10000
+337,28,Sirsak Squash,10000
+338,28,Jeruk Squash,10000
+339,28,Melon Squash,10000
+340,28,Taro,10000
+341,28,Red Velvet,10000
+342,28,Strawberry,10000
+343,28,Permen Karet,10000
+344,28,Mangga,10000
+345,28,Durian,10000
+346,28,Black Forest,10000
+347,28,Choco Caramel,10000
+348,28,Choco Creamy,10000
+349,28,Choco Royal,10000
+350,28,Choco Dark,12000
+351,28,Choco Hazelnut,10000
+352,28,Choco Swiss,10000
+353,29,Nasi Soto Daging,17000
+354,29,Nasi Soto Daging Mix,15000
+355,29,Nasi Penyetan Babat,15000
+356,29,Nasi Penyetan Paru,15000
+357,29,Nasi Penyetan Usus,15000
+358,29,Nasi Penyetan Mix,15000
+359,29,Nasi Penyetan Daging,17000
+360,30,Nasi Ayam Geprek Original,16000
+361,30,Nasi Ayam Lada Hitam,17000
+362,30,Nasi Ayam Geprek Telur,17500
+363,30,Nasi Ayam Saus Asam Manis,17000
+364,30,Nasi Ayam Goreng Tempong,18000
+365,30,Nasi Ayam Katsu Curry,17000
+366,31,Mie Ayam Original,13000
+367,31,Mie Ayam Ceker,15000
+368,31,Mie Ayam Baso,15000
+369,31,Mie Ayam Spesial,17000
+370,31,Ceker,3000
+371,31,Baso,3000
+372,31,Kerupuk Pangsit,3000
+373,32,Bakso Kasar,2000
+374,32,Bakso isi Keju,2000
+375,32,Bakso isi Puyuh,2000
+376,32,Bakso Kecil Halus,1000
+377,32,Tahu Bakso,1000
+378,32,Gorengan,1000
+379,32,Siomay,1000
+380,32,Lontong,2000
+381,33,Maxtea Lemon Tea,5000
+382,33,Nutrisari Aneka Rasa,5000
+383,33,Chocodrink,5000
+384,33,Nescafe Hitam,5000
+385,33,Segar Sari Susu Soda,5000
+386,33,Segar Dingin,5000
+387,33,Hilo Aneka Rasa,6000
+388,33,Milo,6000
+389,33,Maxtea Teh Tarik,6000
+390,33,Beng Beng Drink,6000
+391,33,Chocolatos,6000
+392,33,Good Day Freeze,6000
+393,33,Good Day Cappucino,6000
+394,33,ABC Klepon,6000
+395,33,Jus Alpukat,10000
+396,33,Jus Sirsak,10000
+397,33,Jus Melon,10000
+398,33,Jus Jambu,10000
+399,33,Jus Wortel,10000
+400,33,Jus Jeruk,10000
+401,33,Jus Buah Naga,10000
+402,33,Jus Apel,10000
+403,33,Jus Strawberry,10000
+404,33,Jus Mangga,10000
+405,33,Jus Tomat,10000
+406,33,Mix 2 Buah,12000
+407,33,Es Blewah,7.000
+408,33,Es Jeruk,7.000
+409,33,Sup Buah,15.000
+410,33,Jumbo Jus All Varian,13000
+411,33,Jumbo Mix Juice,15000
+412,33,Es Jeruk Jumbo,10000
+413,33,Es Blewah Jumbo,10000
+414,34,Nasi Tahu + Tempe + Nugget,13000
+415,34,Nasi Telur Dadar / Mata Sapi + Tahu + Tempe + Nugget,13000
+416,34,Nasi Martabak Telur Daging / Sosis + Tahu + Tempe + Nugget,15000
+417,34,Nasi Ayam Goreng + Tahu + Tempe + Nugget,15000
+418,34,Nasi Ayam Goreng Tepung + Tahu + Tempe + Nugget,15000
+419,34,Nasi Udang Goreng Tepung + Tahu + Tempe + Nugget,15000
+420,34,Nasi Ikan Filet Goreng Tepung + Tahu + Tempe + Nugget,15000
+421,34,Nasi Lele Goreng  + Tahu + Tempe + Nugget,15000
+422,34,Nasi Empal Daging  + Tahu + Tempe + Nugget,16000
+423,34,Tempe Goreng / Tahu Goreng,1000
+424,34,Telur Dadar / Ceplok,3000
+425,34,Terong Goreng,2000
+426,34,Rolade,3000
+427,34,Dadar Jagung / Bakwan Jagung,2000
+428,34,Sempol 4 tusuk,5000
+429,34,Nugget 3 Buah,2000
+430,35,Mie Ayam Original,12000
+431,35,Mie Ayam Bakso,15000
+432,35,Mie Ayam Keju,15000
+433,35,Sate Puyuh,3000
+434,35,Nasi Ayam Teriyaki,15000
+435,35,Nasi Chicken Katsu,15000
+436,36,Choco Macho,10000
+437,36,Choco Gurih,10000
+438,36,Choco Banana,10000
+439,36,Choco Tiramisu,10000
+440,36,Choco Oreo,10000
+441,36,Greentea classic,10000
+442,36,Red Velvet,10000
+443,36,Taro Milk,10000
+444,36,Banana Milk,10000
+445,37,Soto Ayam,15000
+446,37,Bakso + mie,13000
+447,37,Pentol Besar,3000
+448,37,Pentol Kecil,1500
+449,37,Tahu Bakso,1500
+450,37,Siomay,1500
+451,37,Gorengan,1500
+452,37,Lontong,2000
+453,37,Bungkus,1000
+454,38,Nasi Pecel + 5 Tambahan,13000
+455,38,Nasi Pecel + Telor + 2 Tambahan,15000
+456,38,Nasi Pecel + Kornet + 2 Tambahan,15000
+457,38,Nasi Pecel + Ayam + 2 Tambahan,17000
+458,38,Nasi Pecel + Udang + 2 Tambahan,17000
+459,38,Nasi Campur + 5 Tambahan,13000
+460,38,Nasi Campur + Telor + 2 Tambahan,15000
+461,38,Nasi Campur + Kornet + 2 Tambahan,15000
+462,38,Nasi Campur + Ayam + 2 Tambahan,17000
+463,38,Nasi Campur + Udang + 2 Tambahan,17000
+464,38,Nasi Sayur Sop + 5 Tambahan,13000
+465,38,Nasi Sayur Sop + Telor + 2 Tambahan,15000
+466,38,Nasi Sayur Sop + Kornet + 2 Tambahan,15000
+467,38,Nasi Sayur Sop + Ayam + 2 Tambahan,17000
+468,38,Nasi Sayur Sop + Udang + 2 Tambahan,17000
+469,38,Nasi Sayur Lodeh + 5 Tambahan,13000
+470,38,Nasi Sayur Lodeh + Telor + 2 Tambahan,15000
+471,38,Nasi Sayur Lodeh + Kornet + 2 Tambahan,15000
+472,38,Nasi Sayur Lodeh + Ayam + 2 Tambahan,17000
+473,38,Nasi Sayur Lodeh + Udang + 2 Tambahan,17000
+474,38,Nasi Krengsengan Daging Sapi,15000
+475,38,Nasi Kare Ayam,15000
+476,38,Nasi Ayam Geprek,13000
+477,39,Nasi Pecel + tahu tempe orek + telor,14000
+478,39,Nasi Sop + tahu tempe orek + telor,14000
+479,39,Nasi Lodeh + tahu tempe orek + telor,14000
+480,39,Nasi Pecel + tahu tempe orek + ayam,16000
+481,39,Nasi Sop + tahu tempe orek + ayam,16000
+482,39,Nasi Lodeh + tahu tempe orek + ayam,16000
+483,39,Nasi Campur + tahu tempe orek + ayam,16000
+484,39,Nasi Pecel + tahu tempe orek + cumi,16000
+485,39,Nasi Sop + tahu tempe orek + cumi,16000
+486,39,Nasi Lodeh + tahu tempe orek + cumi,16000
+487,39,Nasi Campur + tahu tempe orek + cumi,16000
+488,39,Nasi Pecel + tahu tempe orek + kerang,16000
+489,39,Nasi Sop + tahu tempe orek + kerang,16000
+490,39,Nasi Lodeh + tahu tempe orek + kerang,16000
+491,39,Nasi Campur + tahu tempe orek + atiampela,16000
+492,39,Nasi Pecel + tahu tempe orek + atiampela,15000
+493,39,Nasi Sop + tahu tempe orek + atiampela,15000
+494,39,Nasi Lodeh + tahu tempe orek + atiampela,15000
+495,39,Nasi Campur + tahu tempe orek + atiampela,15000
+496,39,Nasi Pecel + tahu tempe orek + ikan tuna,15000
+497,39,Nasi Sop + tahu tempe orek + ikan tuna,15000
+498,39,Nasi Lodeh + tahu tempe orek + ikan tuna,15000
+499,39,Nasi Campur + tahu tempe orek + ikan tuna,15000
+500,39,Nasi Rawon,18000
+501,39,Telor ,3.000
+502,39,Ayam,6.000
+503,39,Ati Ampela,5.000
+504,40,Chicken Steak teriyaki/BBQ/Hot Lava,12000
+505,40,Chicken Steak + Nasi teriyaki/BBQ/Hot Lava,15000
+506,40,Double Chicken Steak teriyaki/BBQ/Hot Lava,20000
+507,40,Double Chicken Steak + Nasi teriyaki/BBQ/Hot Lava,25000
+508,40,Chicken Katsu teriyaki/BBQ/Hot Lava,12000
+509,40,Chicken Katsu + Nasi teriyaki/BBQ/Hot Lava,15000
+510,40,Double Chicken Katsu teriyaki/BBQ/Hot Lava,20000
+511,40,Double Chicken Katsu + Nasi teriyaki/BBQ/Hot Lava,25000
+512,40,Ayam Geprek Ori,15000
+513,40,Ayam Geprek Mozarella/ Keju,18000
+514,40,Chicken Karage teriyaki/BBQ/Hot Lava,18000
+515,40,Nasi Putih,3000
+516,41,Sprite,6000
+517,41,Fanta,6000
+518,41,CocaCola,6000
+519,41,Milk Life,6000
+520,41,Hidrococo,7500
+521,41,Air ,5000
+522,41,Teh Pucuk Harum,5000
+523,41,Ichi Oca,5000
+524,41,Bear Brand,10000
+525,42,Lontong Mie,13000
+526,42,Mie Ayam,11000
+527,42,Bakso,18000
+528,42,Ceker,2000
+529,42,Kepala,3000
+530,42,Telur Puyuh,3000
+531,42,Lontong,2000
+532,42,Krupuk,2000
+533,42,Kripik,2000
+534,43,Nasi Rawon,null
+535,43,Nasi Pecel,null
+536,43,nasi Campur,null
+537,44,Pentol Besar Keju,2000
+538,44,Pentol Besar Puyuh,2000
+539,44,Pentol Besar Jamur,2000
+540,44,Pentol Besar Kasar,2000
+541,44,Lontong,2000
+542,44,Pentol Kecil,1000
+543,44,Tahu Bakso,1000
+544,44,Siomay,1000
+545,44,Gorengan,1000
+546,45,Air Mineral,4000
+547,45,Teh Kotak,5000
+548,45,Teh Botol,7000
+549,45,Fruit Tea,7000
+550,45,Teh Pucuk,6000
+551,45,Javana,6000
+552,45,Varian Susu Kemasan (botol / kotak),9000
+553,45,Minuman bersoda (kaleng / botol),10000
+554,45,Kopi Kemasan,10000
+555,45,Pocari 310ml,10000
+556,45,Teh (ice / hot) R,4000
+557,45,Teh (ice / hot) L,6000
+558,45,Milk Tea (ice / hot) R,6000
+559,45,Milk Tea (ice / hot) L,8000
+560,45,Lychee Tea (ice / hot) R,6000
+561,45,Lychee Tea (ice / hot) L,8000
+562,45,Lemon Tea (ice / hot) R,6000
+563,45,Lemon Tea (ice / hot) L,8000
+564,45,Kunyit Asem,8000
+565,45,Jeruk (ice / hot) R,6000
+566,45,Jeruk (ice / hot) L,8000
+567,45,Lemon (ice / hot) R,6000
+568,45,Lemon (ice / hot) L,8000
+569,45,Milo (ice / hot) R,6000
+570,45,Milo (ice / hot) L,8000
+571,45,Milkshake varian rasa,8000
+572,45,Black / white coffee,8000
+573,46,Waffle Chocolate,8000
+574,46,Waffle Strawberry,8000
+575,46,Waffle Blueberry,8000
+576,46,Waffle Cream Milk,8000
+577,46,Waffle Cheese,8000
+578,46,Waffle Choco Cheese,10000
+579,46,Waffle Choco Cream Milk,10000
+580,46,Waffle Banana,10000
+581,46,Waffle Choco Strawberry,10000
+582,46,Waffle Cream Cheese,10000
+583,46,Waffle Choco Cream Cheese,12000
+584,47,Dimsum Mix Isi 3,15000
+585,47,Dimsum Mix Isi 4,20000
+586,47,Dimsum mentai isi 3,18000
+587,47,Kebab mini,8500
+588,47,Kebab Jumbo,15000
+589,47,Sup Wonton,15000
+590,47,Tahu Walik,15000
+591,48,Mie Aceh Telur,22500
+592,48,Mie Aceh Ayam,25000
+593,48,Mie Aceh Cumi / Udang,27000
+594,48,Mie Aceh Sapi,28000
+595,48,Mie Tomat Telur,22500
+596,48,Mie Tomat Ayam,25000
+597,48,Mie Tomat Cumi / Udang,27000
+598,48,Mie Tomat Sapi,28000
+599,48,Mie Banda & Mie Lomein (Jahe) Telur,22500
+600,48,Mie Banda & Mie Lomein (Jahe) Ayam,25000
+601,48,Mie Banda & Mie Lomein (Jahe) Udang,27000
+602,48,Mie Banda & Mie Lomein (Jahe) Sapi,28000
+603,48,Nasi Sayur Aceh Telur,22500
+604,48,Nasi Sayur Aceh Ayam,25000
+605,48,Nasi Sayur Aceh Cumi / Udang,27000
+606,48,Nasi Sayur Aceh Sapi,28000
+607,48,Ekstra Telur,5000
+608,48,Porsi Jumbo,5000
+609,48,Tambahan Biaya Bungkus / Take Away,2000
+610,49,Nasi Babat + Paru,15000
+611,49,Nasi Babat + Paru Peyek,18000
+612,49,Nasi Madura Komplit,28000
+613,49,Nasi Empal,15000
+614,49,Nasi Telor,10000
+615,49,Nasi Rawon,17000
+616,49,Nasi Rawon Komplit,24000
+617,49,Nasi,5000
+618,49,Telor Asin,5000
+619,49,Telor Bali,5000
+620,49,Telur Dadar,5000
+621,49,Babat,4000
+622,49,Paru,4000
+623,49,Peyek Udang,3500
+624,49,Kerupuk,2000
+625,50,Mie Seblak Aci,16000
+626,50,Mie Seblak Aci Ceker,20000
+627,50,Mie Seblak Suki,20000
+628,50,Mie Seblak Suki Ceker,25000
+629,50,Mie Seblak Sosis Goreng,16000
+630,50,Seblak Ceker,20000
+631,50,Bakso Aci,null
+632,50,Steamboat Suki,15000
+633,50,Nasi Suka Beef Sosis,15000
+634,50,Nasi Suka Seafood Sosis,17000
+635,50,"Nasi Suka Mix (Sosis, Suki, Telur)",20000
+636,50,Stick Keju Mozzarella,15000
+637,50,Stick Sosis Keju Mozzarella,13500
+638,50,Stick Sosis Kentang,15000
+639,50,Stick Kentang,12000
+640,51,Bakso Campur,17500
+641,51,Bakso Halus / Urat,20000
+642,51,Aneka Bakso,20000
+643,51,Lontong,2500
+644,51,Tetelan,5000
+645,52,Nasi / Lontong Soto Ayam Biasa,14000
+646,52,Nasi / Lontong Soto Ayam Istimewa,19000
+647,52,Nasi / Lontong Soto Ayam Pisah,19000
+648,52,Nasi / Lontong Soto Ayam Daging,15000
+649,52,Nasi / Lontong Soto Ayam Daging Spesial,19000
+650,53,Onigiri Jamur (Ori / Spicy),7000
+651,53,Onigiri Jamur Beef (Ori / Spicy),10000
+652,53,Onigiri Jamur Ayam (Ori / Spicy),10000
+653,53,Onigiri Jamur Tuna,10000
+654,53,Onigiri Jumbo,10000
+655,53,Onigiri Golden,10000
+656,53,Mealbox Telur Jamur,13000
+657,53,Mealbox Beef Jamur,25000
+658,53,Mealbox Ayam Jamur,16000
+659,53,Mealbox Geprek Ayam Jamur,16000
+660,53,Mealbox Geprek Jamur,13000
+661,53,Cireng,11000
+662,53,Siomay,16000
+663,53,Satay Jamur (Ori / Spicy),16000
+664,54,Nasi Kuning / Nasi uduk Telor,15000
+665,54,Nasi Kuning / Nasi uduk Ayam,17000
+666,54,Nasi Kuning / Nasi uduk Daging,19000
+667,55,"Coklat Keju (topping coklat meses, keju & kental manis)",15000
+668,55,Cappucino (topping saus cappucino),15000
+669,55,Taro (topping saus taro),15000
+670,55,Chocomaltine (topping coklat chocomaltine + coklat cair),17000
+671,55,Tiramisu (topping tiramisu + taburan chocomalt),17000
+672,55,Coklat Mente (topping saus coklat + taburan kacang mente),17000
+673,55,White Almond (topping saus vanilla dan taburan potongan kacang almond),17000
+674,55,Oreo Creamcheese (topping saus keju dan taburan oreo remuk),17000
+675,55,Vanilla Biscoff (topping saus vanilla dan taburan biscoff),17000
+676,56,Ayam Tanpa Tulang,14000
+677,56,Bentok Reguler,16000
+678,56,Bentok Large,19000
+679,56,Bentok Sultan,24000
+680,56,Jasuke Reguler,8000
+681,56,Jasuke Large,13000
+682,56,Jasuke Molor Reguler,13000
+683,56,Jasuke Molor Large,18000
+684,57,Sus Buah,7000
+685,57,Pie Buah,7000
+686,57,Donat,7000
+687,57,Bomboloni (Aneka Isian),7000
+688,57,Roti Pisang,7000
+689,57,Bolen Pisang,7000
+690,57,Spiku Kenari Slice / Spiku Surabaya,10000
+691,57,Pizza Mini,12000
+692,57,Coffee Bun,8000
+693,57,Milk Bun,16000
+694,57,Cromboloni,15000
+695,57,Roll Cake,5000
+696,57,Susu Vla,5000
+697,57,Marmer Cake,5000
+698,57,Roti Strawberry,5000
+699,57,Roti Coklat,5000
+700,57,Roti Keju,5000
+701,57,Roti Cinnamon,5000
+702,57,Roti Blueberry,5000
+703,57,Roti Semir,5000
+704,57,Aneka Mini Pastry,5000
+705,57,Toast / Roti Panggang,15000
+706,57,Lapisan Kenari 20x10cm,60000
+707,57,Lapisan Surabaya / Spiku Surabaya 20x10cm,60000
+708,57,Lapisan Kenari 22x22cm,130000
+709,57,Lapisan Surabaya / Spiku Surabaya 22x22cm,130000
+710,57,Lapisan Kenari 20x10cm,70000
+711,57,Lapisan Surabaya / Spiku Surabaya 20x10cm,70000
+712,57,Lapisan Kenari 22x22cm,150000
+713,57,Lapisan Surabaya / Spiku Surabaya 22x22cm,150000
+714,57,Tart Diameter 20cm,200000
+715,57,Kastengel Premium,95000
+716,57,Nastar Premium,95000
+717,57,Chuikaoso,55000
+718,57,Florentine Cookies,60000
+719,57,Almond Strawberry,65000
+720,57,Putri Salju,65000
+721,57,Brownies Cookies,65000
+722,57,Chocochip Kenari Cookies,65000
+723,57,Lidah Kucing,65000
+724,57,Choco Cookies With Melt Sauce,70000
+725,57,Dahlia Cookies,70000
+726,57,Snack Stik Keju,20000
+727,58,Lumpia Rebung Wortel,6000
+728,58,Lumpia Rebung Wortel Telur,7000
+729,58,Lumpia Rebung Wortel Ayam,7000
+730,58,Lumpia Rebung Wortel Beef,7000
+731,58,Risol Mayo Beef / Sosis,6000
+732,58,Risol Rogut Ayam,6000
+733,58,Pastel Bihun Ayam,6000
+734,58,Pastel Rogut Ayam,6000
+735,58,Tahu Baso Aneka Rasa,5000
+736,58,Lumpia Pisang Coklat Aneka Rasa,5000
+737,58,Bakwan Sayur,5000
+738,58,Bakwan Udang,6000
+739,58,Mix Isi 2,10000
+740,58,Mix Isi 3,15000
+741,59,Tumpeng Polo Pendem,null
+742,59,Tumpeng Jajan Pasar,null
+743,59,Bubur Madura Kendil,6000
+744,59,Bubur Madura Satuan,null
+745,59,Iwel Iwel,5000
+746,59,Klanting,5000
+747,59,Gethuk Lindri,5000
+748,59,Ketan Bubuk Putih & Hitam,5000
+749,59,Kue Talam,5000
+750,59,Kue Koci Koci,5000
+751,59,Putu,5000
+752,59,Klepon,5000
+753,59,Serawut,5000
+754,59,Serabi,5000
+755,59,Tetel,5000
+756,59,Wajik,5000
+757,59,Polo Pendem,5000
+758,59,Lemper,5000
+759,60,RTE Pempek Lenjeran + Lenjeran,15000
+760,60,RTE Pempek Kapal Selam + Kapal Selam,15000
+761,60,RTE Pempek Kapal Selam + Lenjeran,15000
+762,60,RTE Pempek Kapal Selam + Kulit,15000
+763,60,RTE Lenjeran + Kulit,15000
+764,60,"Pempek Berlian Komplit ( Isian 1 Kapal Selam, 1 Lenjeran, 1 Kulit, Mie dan Cuko)",20000
+765,60,"Pempek Berlian Lenggang ( Isian Irisan Lenjeran, Dadar Telur, Mie dan Cuko)",20000
+766,61,Kriyuuk Chicken Popcorn,16000
+767,61,Kriyuuk Chicken Fillet,16000
+768,61,Kriyuuk Chicken Skin (Kulit),14000
+769,61,Nasi Ayam Geprek,20000
+770,61,Ayam Geprek Tanpa Nasi,18000
+771,61,Nasi Ayam Geprek + Telur,24000
+772,61,Nasi Ayam Geprek + Keju,25000
+773,61,Kriyuuk Chicken Rice Box With Sauce,20000
+774,61,Kriyuuk Chicken Katsu + Nasi,28000
+775,61,Kriyuuk Chicken Katsu (Tanpa Nasi),23000
+776,61,Nasi,5000
+777,61,Dada,15000
+778,61,Nasi + Dada,20000
+779,61,Telur,4000
+780,61,Saus,4000
+781,62,Nasi Campur Telur,12000
+782,62,Nasi Campur Ayam,15000
+783,62,Nasi Campur Ayam + Telur,20000
+784,62,Nasi Campur Daging,15000
+785,62,Nasi Campur Daging + Telur,20000
+786,62,Nasi Campur Ikan,15000
+787,63,Tahu Tek / Telur dengan Lontong / Nasi,15000
+788,63,Tahu Tek / Telur tanpa Lontong / Nasi,15000
+789,63,Nasi Pecel Ori,13000
+790,63,Nasi Pecel + Telur Bali,15000
+791,63,Nasi Pecel + Telur Dadar,15000
+792,63,Nasi Pecel + Ayam Goreng,18000
+793,63,Nasi Pecel + Ikan Tongkol,18000
+794,63,Nasi Pecel + Telur Asin,16000
+795,63,Nasi,5000
+796,63,Lontong,5000
+797,63,Telur,5000
+798,63,Kerupuk,3000
+799,63,Peyek,4000
+800,63,Ayam,8000
+801,63,Tongkol,8000
+802,63,Telur Asin,6000
+803,64,Nasi Goreng Hongkong,17000
+804,64,Nasi Goreng Cumi,17000
+805,64,Nasi Goreng Rawon,17000
+806,64,Nasi Goreng Original,17000
+807,64,Nasi Goreng Kebuli Ayam Goreng,17500
+808,64,Nasi Goreng Kebuli Ayam Bumbu,17500
+809,65,Mie Ayam Solo Ori,13000
+810,65,Mie Ayam Solo Ceker,17000
+811,65,Mie Ayam Solo Kepala,17000
+812,65,Mie Ayam Solo Puyuh,17000
+813,65,Mie Ayam Solo Bakso,17000
+814,65,Mie Ayam Solo Ceker + Kepala,20000
+815,65,Mie Ayam Solo Ori Jumbo,20000
+816,65,Mie Ayam Solo Ceker Jumbo,25000
+817,65,Mie Ayam Solo Kepala Jumbo,25000
+818,65,Mie Ayam Solo Puyuh Jumbo,25000
+819,65,Mie Ayam Solo Bakso Jumbo,25000
+820,65,Mie Ayam Solo Ceker + Kepala Jumbo,25000
+821,66,Cincau,12000
+822,66,Grass Jelly,8000
+823,67,Gado Gado,17000
+824,67,Kerupuk,2000
+825,67,Emping,4000
+826,67,Telur Rebus,3000
+827,68,Juice Tomat,7000
+828,68,Juice Wortel,7000
+829,68,Juice Pisang,7000
+830,68,Juice Jeruk,7000
+831,68,Juice Jambu,8000
+832,68,Juice Nanas,8000
+833,68,Juice Belimbing,9000
+834,68,Juice Strawberry,10000
+835,68,Juice Melon,10000
+836,68,Juice Semangka,10000
+837,68,Juice Lemon,10000
+838,68,Juice Pear,10000
+839,68,Juice Sirsak,12000
+840,68,Juice Kurma,12000
+841,68,Juice Mangga,12000
+842,68,Juice Apel,12000
+843,68,Juice Buah Naga,12000
+844,68,Juice Anggur,13000
+845,68,Es Buah,13000
+846,68,Juice Mix 2 Buah,14000
+847,68,Juice Alpukat,14000
+848,68,Juice Mix 3 Buah,15000
+849,68,Juice Durian,16000
+850,69,Nasi Ati Ampela Goreng,16000
+851,69,Nasi Lele Goreng,16000
+852,69,Nasi Mujaer Goreng,16000
+853,69,Nasi Tongkol Goreng,16000
+854,69,Nasi Panggangan Goreng,16000
+855,69,Nasi Ayam Goreng,18000
+856,69,Nasi udang Goreng,16000
+857,69,Krupuk,2000
+858,69,Telur Goreng,3000
+859,69,Ati Ampela,7000
+860,69,Lele Goreng,7000
+861,69,Mujaer Goreng,7000
+862,69,Tongkol,7000
+863,69,Panggangan,7000
+864,69,Ayam,8000
+865,70,Latte Original,20000
+866,70,Cappucino,20000
+867,70,Brown Latte (Gula Aren Premium),20000
+868,70,Dolce,20000
+869,70,Hazelnut Latte,20000
+870,70,Vanila Latte,20000
+871,70,Caramel Latte,20000
+872,70,Ice Caramel Machiato & Ice Cream,30000
+873,70,Hot Piccolo,20000
+874,70,Mocca,20000
+875,70,Hot Espresso Single,10000
+876,70,Hot Espresso Double,15000
+877,70,Ice Affogato,20000
+878,70,Hot Long Black,15000
+879,70,Americano,15000
+880,70,Lemon Tea,10000
+881,70,Peach Tea,10000
+882,70,Mint Tea,10000
+883,70,Special Black Tea,10000
+884,70,Jasmine Tea,10000
+885,70,Ice Fresh Squeeze Lemonade,15000
+886,70,Lychee Tea (Buah Lychee),15000
+887,70,Ice Hazelnut MilkTea,20000
+888,70,Ice Klepon Milk Tea,20000
+889,70,Ice Surabaya Milk Tea,20000
+890,70,Ice Honey Lemon Tea,20000
+891,70,Ice Black Sweet,20000
+892,70,Hot Special Green Tea,15000
+893,70,Hot Special Green Lake,20000
+894,70,Hot Special Red Moon,20000
+895,70,Hot Special White Tea,25000
+896,70,Chocolate Sumatera,20000
+897,70,Chocolate Java,20000
+898,70,Chocolate Bali,20000
+899,70,Chocolate Sulawesi,20000
+900,70,Matcha,20000
+901,70,Ice Klepon,20000
+902,70,Ice Red Velvet,20000
+903,70,Avocado,20000
+904,70,Thai Tea,20000
+905,70,Mango,20000
+906,70,Ice Matcha Berry,20000
+907,70,Ice SalDo Coffee,20000
+908,70,Ice Velvet Coffee,20000
+909,70,Ice Mocha Milkshake,23000
+910,70,Ice Vanila Milkshake,23000
+911,70,Ice Strawberry Milkshake,23000
+912,70,Hot Tubruk,15000
+913,70,Hot FrenchPres,20000
+914,70,V 60,20000
+915,70,Hot Shypon,30000
+916,70,Hot AeroPress,30000
+917,70,Vietnam Drip,20000
+918,70,Mineral Water,10000
+919,70,Coffee Beer,17000
+920,70,Espresso,5000
+921,70,Gayo Wine,7000
+922,70,Sirup,5000
+923,70,Ice Cream,5000
+924,70,Topping Sundae,5000
+,,,
+price_range_id,menu_id,min_price,max_price
+1,52,9000,15000
+2,83,4000,6000
+3,631,16000,18000
+4,741,150000,null
+5,742,150000,null
+6,744,200000,null
+,,,
+addOn_id,addOn_name,addOn_price
+1,takeaway,1000
+2,keju,1000
+3,boba,3000
+4,chocochip,3000
+5,oreo,3000
+6,tempe,null
+7,tahu,null
+8,bakwan jagung,null
+9,otak-otak,null
+10,nugget,null
+11,tempura,null
+12,sosis,null
+13,scallop,null
+14,telur dadar,4000
+15,telur kriwil4000
+16,telur ceplok,4000
+17,kerupuk,4000
+18,kerupuk udang,2000
+19,takeaway,2000
+20,takeaway thinwall2000
+21,telur,5000
+22,ayam,6000
+23,daging,8000
+24,takeaway paperbox standar,0
+25,ceker,2000
+26,kepala,4000
+27,keripik,3000
+28,pentol bakso,5000
+29,puyuh,5000
+30,cup jumbo puas,4000
+31,hot,null
+32,ice,5000
+33,ice,3000
+,,,
+id,menu_id,addOn_id,max_addOn
+1,225,1,null
+2,226,1,null
+3,227,1,null
+4,228,1,null
+5,229,1,null
+6,230,1,null
+7,240,2,null
+8,241,2,null
+9,242,2,null
+10,243,2,null
+11,244,2,null
+12,255,1,null
+13,256,1,null
+14,257,1,null
+15,258,1,null
+16,259,1,null
+17,260,1,null
+18,277,30,null
+19,279,30,null
+20,281,30,null
+21,283,30,null
+22,285,30,null
+23,287,30,null
+24,289,30,null
+25,291,30,null
+26,293,30,null
+27,295,30,null
+28,342,3,null
+29,342,4,null
+30,342,5,null
+31,343,3,null
+32,343,4,null
+33,343,5,null
+34,344,3,null
+35,344,4,null
+36,344,5,null
+37,345,3,null
+38,345,4,null
+39,345,5,null
+40,346,3,null
+41,346,4,null
+42,346,5,null
+43,347,3,null
+44,347,4,null
+45,347,5,null
+46,348,3,null
+47,348,4,null
+48,348,5,null
+49,349,3,null
+50,349,4,null
+51,349,5,null
+52,350,3,null
+53,350,4,null
+54,350,5,null
+55,351,3,null
+56,351,4,null
+57,351,5,null
+58,352,3,null
+59,352,4,null
+60,352,5,null
+61,353,3,null
+62,353,4,null
+63,353,5,null
+64,354,3,null
+65,354,4,null
+66,354,5,null
+67,355,3,null
+68,355,4,null
+69,355,5,null
+70,356,3,null
+71,356,4,null
+72,356,5,null
+73,357,3,null
+74,357,4,null
+75,357,5,null
+76,358,3,null
+77,358,4,null
+78,358,5,null
+79,359,3,null
+80,359,4,null
+81,359,5,null
+82,360,3,null
+83,360,4,null
+84,360,5,null
+85,361,3,null
+86,361,4,null
+87,361,5,null
+88,362,3,null
+89,362,4,null
+90,362,5,null
+91,464,6,5
+92,464,7,5
+93,464,8,5
+94,464,9,5
+95,464,10,5
+96,464,11,5
+97,464,12,5
+98,464,13,5
+99,465,6,2
+100,465,7,2
+101,465,8,2
+102,465,9,2
+103,465,10,2
+104,465,11,2
+105,465,12,2
+106,465,13,2
+107,466,6,2
+108,466,7,2
+109,466,8,2
+110,466,9,2
+111,466,10,2
+112,466,11,2
+113,466,12,2
+114,466,13,2
+115,467,6,2
+116,467,7,2
+117,467,8,2
+118,467,9,2
+119,467,10,2
+120,467,11,2
+121,467,12,2
+122,467,13,2
+123,468,6,2
+124,468,7,2
+125,468,8,2
+126,468,9,2
+127,468,10,2
+128,468,11,2
+129,468,12,2
+130,468,13,2
+131,469,6,5
+132,469,7,5
+133,469,8,5
+134,469,9,5
+135,469,10,5
+136,469,11,5
+137,469,12,5
+138,469,13,5
+139,470,6,2
+140,470,7,2
+141,470,8,2
+142,470,9,2
+143,470,10,2
+144,470,11,2
+145,470,12,2
+146,470,13,2
+147,471,6,2
+148,471,7,2
+149,471,8,2
+150,471,9,2
+151,471,10,2
+152,471,11,2
+153,471,12,2
+154,471,13,2
+155,472,6,2
+156,472,7,2
+157,472,8,2
+158,472,9,2
+159,472,10,2
+160,472,11,2
+161,472,12,2
+162,472,13,2
+163,473,6,2
+164,473,7,2
+165,473,8,2
+166,473,9,2
+167,473,10,2
+168,473,11,2
+169,473,12,2
+170,473,13,2
+171,474,6,5
+172,474,7,5
+173,474,8,5
+174,474,9,5
+175,474,10,5
+176,474,11,5
+177,474,12,5
+178,474,13,5
+179,475,6,2
+180,475,7,2
+181,475,8,2
+182,475,9,2
+183,475,10,2
+184,475,11,2
+185,475,12,2
+186,475,13,2
+187,476,6,2
+188,476,7,2
+189,476,8,2
+190,476,9,2
+191,476,10,2
+192,476,11,2
+193,476,12,2
+194,476,13,2
+195,477,6,2
+196,477,7,2
+197,477,8,2
+198,477,9,2
+199,477,10,2
+200,477,11,2
+201,477,12,2
+202,477,13,2
+203,478,6,2
+204,478,7,2
+205,478,8,2
+206,478,9,2
+207,478,10,2
+208,478,11,2
+209,478,12,2
+210,478,13,2
+211,479,6,5
+212,479,7,5
+213,479,8,5
+214,479,9,5
+215,479,10,5
+216,479,11,5
+217,479,12,5
+218,479,13,5
+219,480,6,2
+220,480,7,2
+221,480,8,2
+222,480,9,2
+223,480,10,2
+224,480,11,2
+225,480,12,2
+226,480,13,2
+227,481,6,2
+228,481,7,2
+229,481,8,2
+230,481,9,2
+231,481,10,2
+232,481,11,2
+233,481,12,2
+234,481,13,2
+235,482,6,2
+236,482,7,2
+237,482,8,2
+238,482,9,2
+239,482,10,2
+240,482,11,2
+241,482,12,2
+242,482,13,2
+243,483,6,2
+244,483,7,2
+245,483,8,2
+246,483,9,2
+247,483,10,2
+248,483,11,2
+249,483,12,2
+250,483,13,2
+251,484,6,null
+252,484,7,null
+253,484,8,null
+254,484,9,null
+255,484,10,null
+256,484,11,null
+257,484,12,null
+258,484,13,null
+259,485,6,null
+260,485,7,null
+261,485,8,null
+262,485,9,null
+263,485,10,null
+264,485,11,null
+265,485,12,null
+266,485,13,null
+267,486,6,null
+268,486,7,null
+269,486,8,null
+270,486,9,null
+271,486,10,null
+272,486,11,null
+273,486,12,null
+274,486,13,null
+275,643,14,null
+276,643,15,null
+277,643,16,null
+278,643,17,null
+279,644,14,null
+280,644,15,null
+281,644,16,null
+282,644,17,null
+283,645,14,null
+284,645,15,null
+285,645,16,null
+286,645,17,null
+287,655,18,null
+288,655,19,null
+289,655,20,null
+290,656,18,null
+291,656,19,null
+292,656,20,null
+293,657,18,null
+294,657,19,null
+295,657,20,null
+296,658,18,null
+297,658,19,null
+298,658,20,null
+299,659,18,null
+300,659,19,null
+301,659,20,null
+302,674,21,null
+303,674,22,null
+304,674,23,null
+305,675,21,null
+306,675,22,null
+307,675,23,null
+308,676,21,null
+309,676,22,null
+310,676,23,null
+311,802,24,null
+312,802,20,null
+313,803,24,null
+314,803,20,null
+315,804,24,null
+316,804,20,null
+317,805,24,null
+318,805,20,null
+319,806,24,null
+320,806,20,null
+321,807,24,null
+322,807,20,null
+323,808,24,null
+324,808,20,null
+325,809,24,null
+326,809,20,null
+327,824,19,null
+328,824,25,null
+329,824,26,null
+330,824,27,null
+331,824,28,null
+332,824,29,null
+333,825,19,null
+334,825,25,null
+335,825,26,null
+336,825,27,null
+337,825,28,null
+338,825,29,null
+339,826,19,null
+340,826,25,null
+341,826,26,null
+342,826,27,null
+343,826,28,null
+344,826,29,null
+345,827,19,null
+346,827,25,null
+347,827,26,null
+348,827,27,null
+349,827,28,null
+350,827,29,null
+351,828,19,null
+352,828,25,null
+353,828,26,null
+354,828,27,null
+355,828,28,null
+356,828,29,null
+357,829,19,null
+358,829,25,null
+359,829,26,null
+360,829,27,null
+361,829,28,null
+362,829,29,null
+363,830,19,null
+364,830,25,null
+365,830,26,null
+366,830,27,null
+367,830,28,null
+368,830,29,null
+369,831,19,null
+370,831,25,null
+371,831,26,null
+372,831,27,null
+373,831,28,null
+374,831,29,null
+375,832,19,null
+376,832,25,null
+377,832,26,null
+378,832,27,null
+379,832,28,null
+380,832,29,null
+381,833,19,null
+382,833,25,null
+383,833,26,null
+384,833,27,null
+385,833,28,null
+386,833,29,null
+387,834,19,null
+388,834,25,null
+389,834,26,null
+390,834,27,null
+391,834,28,null
+392,834,29,null
+393,835,19,null
+394,835,25,null
+395,835,26,null
+396,835,27,null
+397,835,28,null
+398,835,29,null
+399,884,31,null
+400,884,32,null
+401,884,31,null
+402,885,32,null
+403,886,31,null
+404,886,32,null
+405,889,31,null
+406,889,32,null
+407,894,31,null
+408,894,33,null
+409,895,31,null
+410,895,32,null
+411,896,31,null
+412,896,32,null
+413,897,31,null
+414,897,32,null
+415,898,31,null
+416,898,32,null
+417,899,31,null
+418,899,32,null
+419,901,31,null
+420,901,33,null
+421,932,31,null
+422,932,33,null
+,,,
+option_id,option_name
+1,sayur sop
+2,sayur bayam
+3,sayur lodeh
+4,kare ayam
+5,rawon
+6,meses
+7,keju
+8,gula
+9,coklat
+10,coklat keju
+11,vanilla
+12,strawberry
+13,matcha
+14,pandan
+15,mocca meses
+16,blueberry
+17,coklat meses
+18,ovomaltine crunchy
+19,srikaya
+20,original
+21,chocochip
+22,spiku (kuning coklat)
+23,blackforest
+24,redvelvet
+25,barbeque
+26,blackpepper
+27,cheese
+28,fire
+29,capjay
+30,aneka sayur
+31,balado terong
+32,sup sayur
+33,ayam bakar
+34,ayam rica-rica
+35,ayam krengsengan
+36,ayam saus inggris
+37,ayam kecap
+38,telur bali
+39,rolade
+40,dadar kribo
+41,oseng tahu
+42,sambal goreng tahu
+43,ice
+44,hot
+,,,
+id,menu_id,option_id
+1,179,1
+2,179,2
+3,179,3
+4,179,4
+5,179,5
+6,696,6
+7,696,7
+8,696,8
+9,698,7
+10,698,9
+11,698,10
+12,699,7
+13,699,9
+14,699,10
+15,703,11
+16,703,9
+17,704,9
+18,704,12
+19,704,13
+20,705,7
+21,705,14
+22,705,12
+23,705,6
+24,705,15
+25,713,6
+26,713,7
+27,715,12
+28,715,16
+29,715,17
+30,715,7
+31,715,10
+32,715,18
+33,715,19
+34,716,20
+35,716,21
+36,716,16
+37,717,20
+38,717,21
+39,717,16
+40,718,20
+41,718,21
+42,718,16
+43,719,20
+44,719,21
+45,719,16
+46,720,20
+47,720,21
+48,720,16
+49,721,20
+50,721,21
+51,721,16
+52,722,20
+53,722,21
+54,722,16
+55,723,20
+56,723,21
+57,723,16
+58,724,22
+59,724,23
+60,724,24
+61,724,9
+62,790,25
+63,790,26
+64,790,27
+65,790,28
+66,797,29
+67,797,30
+68,797,31
+69,797,32
+70,798,33
+71,798,34
+72,798,35
+73,798,36
+74,798,37
+75,799,38
+76,799,39
+77,799,40
+78,801,41
+79,801,42
+80,880,43
+81,880,44
+82,881,43
+83,881,44
+84,882,43
+85,882,44
+86,883,43
+87,883,44
+88,911,43
+89,911,44
+90,912,43
+91,912,44
+92,913,43
+93,913,44
+94,914,43
+95,914,44
+96,915,43
+97,915,44
+98,918,43
+99,918,44
+100,919,43
+101,919,44
+102,920,43
+103,920,44
+104,929,43
+105,929,44
