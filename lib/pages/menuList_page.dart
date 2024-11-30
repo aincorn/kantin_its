@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kantin_its/core/configs/theme/app_color.dart';
 import 'package:kantin_its/pages/landing_page.dart';
 import 'package:kantin_its/core/configs/theme/app_theme.dart';
 import '../database_helper.dart';
@@ -35,11 +36,11 @@ class TenantDetail extends StatelessWidget {
 
   const TenantDetail({Key? key, required this.tenantId, required this.tenantName}) : super(key: key);
 
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: Text(
@@ -52,31 +53,87 @@ class TenantDetail extends StatelessWidget {
         ),
       ),
       extendBodyBehindAppBar: true,
-      body: Container(
-        decoration: AppTheme.getGradientBackground(), // Apply gradient background
-        child: FutureBuilder<List<Map<String, dynamic>>>(
-          future: fetchMenusByTenant(tenantId),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasError) {
-              return Center(child: Text('Error: ${snapshot.error}'));
-            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(child: Text('Tidak ada menu untuk tenant ini.'));
-            } else {
-              var menuList = snapshot.data!;
-              return ListView.builder(
-                itemCount: menuList.length,
-                itemBuilder: (context, index) {
-                  return FoodCard(menu: menuList[index]);
+      body: Stack(
+        // Using Stack to overlay widgets
+        children: [
+          // Body content
+          Container(
+            decoration:
+                AppTheme.getGradientBackground(), // Apply gradient background
+            child: FutureBuilder<List<Map<String, dynamic>>>(
+              future: fetchMenusByTenant(tenantId),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return const Center(
+                      child: Text('Tidak ada menu untuk tenant ini.'));
+                } else {
+                  var menuList = snapshot.data!;
+                  return ListView.builder(
+                    itemCount: menuList.length,
+                    itemBuilder: (context, index) {
+                      return FoodCard(menu: menuList[index]);
+                    },
+                  );
+                }
+              },
+            ),
+          ),
+
+          // Positioned container for the button
+          Positioned(
+            bottom: 0, // Position at the bottom
+            left: 0, // Align to the left
+            right: 0, // Align to the right
+            child: Container(
+              padding: EdgeInsets.all(16), // Add padding around the button
+              decoration: BoxDecoration(
+                color: Colors.white, // Background color of the container
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 10,
+                    offset: Offset(0, -4), // Shadow on top of the container
+                  ),
+                ],
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Action when the button is pressed
+                  print("Tampilkan peta button pressed");
+                  // Add the code to navigate to map or perform any other action
                 },
-              );
-            }
-          },
-        ),
+                child: const Text(
+                  'Tampilkan Peta',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  backgroundColor: AppColors.buttonColor, // Button color
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
+
 
   Future<List<Map<String, dynamic>>> fetchMenusByTenant(int tenantId) async {
     return await DatabaseHelper.instance.fetchMenusByTenant(tenantId);
@@ -88,56 +145,62 @@ class FoodCard extends StatelessWidget {
 
   const FoodCard({Key? key, required this.menu}) : super(key: key);
 
-  @override
+@override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 4,
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  'https://img.freepik.com/premium-vector/nasi-goreng-illustration-indonesian-food-with-cartoon-style_44695-648.jpg',
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return const Icon(Icons.broken_image, size: 80, color: Colors.grey);
-                  },
+      child: Container(
+       child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+          elevation: 4,
+          // color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0), // Pastikan Card transparan agar gradient terlihat
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.network(
+                    'https://img.freepik.com/premium-vector/nasi-goreng-illustration-indonesian-food-with-cartoon-style_44695-648.jpg',
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Icon(Icons.broken_image,
+                          size: 80, color: Colors.grey);
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      menu['menu_name'] ?? 'No Name',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.brown,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        menu['menu_name'] ?? 'No Name',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.brown,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      'Price: Rp${menu['menu_price'] ?? 'Unknown'}',
-                      style: TextStyle(color: Colors.brown[300]),
-                    ),
-                  ],
+                      const SizedBox(height: 4),
+                      Text(
+                        'Price: Rp${menu['menu_price'] ?? 'Unknown'}',
+                        style: TextStyle(color: Colors.brown[300]),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+
+
 }

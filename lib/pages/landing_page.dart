@@ -67,8 +67,9 @@ class LandingPage extends StatelessWidget {
             const Logo(),
             const KantinText(),
             const SearchBar(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             const ScrollableButtonSection(),
+            const SizedBox(height: 10),
             FutureBuilder<List<Map<String, dynamic>>>(
               future: fetchCanteenData(),
               builder: (context, snapshot) {
@@ -97,6 +98,7 @@ class LandingPage extends StatelessWidget {
             ),
           ],
         ),
+      
       ),
     );
   }
@@ -128,6 +130,7 @@ class CanteenCard extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
+                fontFamily: 'Roboto',
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textThirdColor,
@@ -152,16 +155,24 @@ class CanteenCard extends StatelessWidget {
                       },
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 10),
+                    backgroundColor: AppColors.buttonLabelBackgroundColorCreme
+                        .withOpacity(1.0), // Terapkan transparansi 39%
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(9),
+                      borderRadius: BorderRadius.circular(20),
                       side: const BorderSide(color: AppColors.accentSearchColor),
                     ),
                   ),
                   child: Text(
                     tenant['tenantName'] ?? 'Unknown Tenant',
-                    style: const TextStyle(color: AppColors.accentSearchColor),
+                    style: const TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.buttonLabelColorText                      
+                      ),
                   ),
                 );
               }).toList(),
@@ -344,6 +355,7 @@ class _SearchPageState extends State<SearchPage> {
               ),
           ],
         ),
+      
       ),
     );
   }
@@ -444,8 +456,7 @@ class _ScrollableButtonSectionState extends State<ScrollableButtonSection> {
       _activeIndex = index;
     });
   }
-
-  @override
+@override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -454,15 +465,39 @@ class _ScrollableButtonSectionState extends State<ScrollableButtonSection> {
         child: Row(
           children: [
             CustomButton(
-              text: 'Button 1',
+              text: 'Terdekat',
               isActive: _activeIndex == 0,
               onPressed: () => _setActiveButton(0),
             ),
             const SizedBox(width: 10),
             CustomButton(
-              text: 'Button 2',
+              text: 'Termurah',
               isActive: _activeIndex == 1,
               onPressed: () => _setActiveButton(1),
+            ),
+            const SizedBox(width: 10),
+            CustomButton(
+              text: 'Terpopuler',
+              isActive: _activeIndex == 2,
+              onPressed: () => _setActiveButton(2),
+            ),
+            const SizedBox(width: 10),
+            CustomButton(
+              text: 'Disukai',
+              isActive: _activeIndex == 3,
+              onPressed: () => _setActiveButton(3),
+            ),
+            const SizedBox(width: 10),
+            CustomButton(
+              text: 'Paling Banyak Dibeli',
+              isActive: _activeIndex == 4,
+              onPressed: () => _setActiveButton(4),
+            ),
+            const SizedBox(width: 10),
+            CustomButton(
+              text: 'Diskon Terbaik',
+              isActive: _activeIndex == 5,
+              onPressed: () => _setActiveButton(5),
             ),
           ],
         ),
@@ -492,12 +527,24 @@ class CustomButton extends StatelessWidget {
         backgroundColor: isActive ? AppColors.accentSearchColor : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(9),
-          side: const BorderSide(color: AppColors.accentSearchColor),
+          side: const BorderSide(color: AppColors.buttonColor),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         elevation: isActive ? 5 : 0,
       ),
-      child: Text(text),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 16, // Mengatur ukuran font
+          fontWeight: FontWeight.bold, // Mengatur ketebalan font
+          color: isActive
+              ? Colors.white
+              : AppColors
+                  .accentSearchColor, // Mengatur warna font sesuai dengan status aktif
+        ),
+        ),
+
     );
   }
 }
