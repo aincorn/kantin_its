@@ -40,7 +40,7 @@ class DatabaseHelper {
   }
 
   Future<List<Map<String, dynamic>>> fetchMenusByTenant(int tenantId) async {
-    final db = await database;
+    final db = await database; // Ensure database is initialized
     return await db.query(
       'Menus',
       where: 'tenant_id = ?',
@@ -48,43 +48,55 @@ class DatabaseHelper {
     );
   }
 
-  // Function to delete all rows from a table
-  Future<void> clearTable(String table) async {
+  Future<List<Map<String, dynamic>>> fetchCanteensWithTenants() async {
     final db = await database;
-    await db.delete(table);
+
+    // Query to fetch canteens along with their tenants
+    final result = await db.rawQuery('''
+      SELECT 
+        Canteens.canteen_id,
+        Canteens.canteen_name,
+        Canteens.latitude,
+        Canteens.longitude,
+        Tenants.tenant_id,
+        Tenants.tenant_name,
+        Tenants.tenant_description
+      FROM Canteens
+      LEFT JOIN Tenants ON Canteens.canteen_id = Tenants.canteen_id
+      ORDER BY Canteens.canteen_id, Tenants.tenant_id
+    ''');
+
+    return result;
   }
 
   Future<List<Map<String, dynamic>>> search(String query) async {
     final db = await database;
 
     final result = await db.rawQuery('''
-      -- Search by canteen name
       SELECT 'canteen' AS type, tenants.tenant_name, 
-            tenants.tenant_id, -- Include tenant_id
-            COALESCE(tenants.tenant_description, '') AS tenant_description, 
-            canteens.canteen_name, NULL AS menu_name
+       tenants.tenant_id, 
+       COALESCE(tenants.tenant_description, '') AS tenant_description, 
+       canteens.canteen_name, NULL AS menu_name, NULL AS menu_price
       FROM Canteens
       LEFT JOIN Tenants ON Canteens.canteen_id = Tenants.canteen_id
       WHERE canteens.canteen_name LIKE ?
 
       UNION ALL
 
-      -- Search by tenant name
       SELECT 'tenant' AS type, tenants.tenant_name, 
-            tenants.tenant_id, -- Include tenant_id
+            tenants.tenant_id, 
             COALESCE(tenants.tenant_description, '') AS tenant_description, 
-            canteens.canteen_name, NULL AS menu_name
+            canteens.canteen_name, NULL AS menu_name, NULL AS menu_price
       FROM Tenants
       INNER JOIN Canteens ON Tenants.canteen_id = Canteens.canteen_id
       WHERE tenants.tenant_name LIKE ?
 
       UNION ALL
 
-      -- Search by menu name
       SELECT 'menu' AS type, tenants.tenant_name, 
-            tenants.tenant_id, -- Include tenant_id
+            tenants.tenant_id, 
             COALESCE(tenants.tenant_description, '') AS tenant_description, 
-            canteens.canteen_name, Menus.menu_name
+            canteens.canteen_name, Menus.menu_name, Menus.menu_price
       FROM Menus
       INNER JOIN Tenants ON Menus.tenant_id = Tenants.tenant_id
       INNER JOIN Canteens ON Tenants.canteen_id = Canteens.canteen_id
