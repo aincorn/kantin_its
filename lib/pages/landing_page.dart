@@ -456,6 +456,7 @@ class _ScrollableButtonSectionState extends State<ScrollableButtonSection> {
       _activeIndex = index;
     });
   }
+
 @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -464,10 +465,14 @@ class _ScrollableButtonSectionState extends State<ScrollableButtonSection> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Row(
           children: [
-            CustomButton(
-              text: 'Terdekat',
-              isActive: _activeIndex == 0,
-              onPressed: () => _setActiveButton(0),
+            Container(
+              margin:
+                  const EdgeInsets.only(left: 10.0), // Menambahkan margin kiri
+              child: CustomButton(
+                text: 'Terdekat',
+                isActive: _activeIndex == 0,
+                onPressed: () => _setActiveButton(0),
+              ),
             ),
             const SizedBox(width: 10),
             CustomButton(
@@ -504,6 +509,7 @@ class _ScrollableButtonSectionState extends State<ScrollableButtonSection> {
       ),
     );
   }
+
 }
 
 class CustomButton extends StatelessWidget {
