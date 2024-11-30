@@ -22,11 +22,11 @@ class KantinBiologiScreen extends StatelessWidget {
         ModalRoute.of(context)?.settings.arguments as String;
 
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text('$kantinName'),
-        //   backgroundColor: Colors.brown, // Set background color for AppBar
-        //   elevation: 4,
-        // ),
+        appBar: AppBar(
+          title: Text('$kantinName'),
+          backgroundColor: Colors.brown, // Set background color for AppBar
+          elevation: 4,
+        ),
         body: RefreshIndicator(
           child: FutureBuilder(
             // Misalnya kita fetch data terkait kantin berdasarkan nama kantin
