@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kantin_its/core/configs/theme/app_color.dart';
 import 'package:kantin_its/pages/landing_page.dart';
 import 'package:kantin_its/core/configs/theme/app_theme.dart';
+import 'package:kantin_its/pages/map_page.dart';
 import '../database_helper.dart';
 
 void main() {
@@ -24,7 +25,10 @@ class MyApp extends StatelessWidget {
             ),
           );
         }
-        return MaterialPageRoute(builder: (context) => const LandingPage());
+        if (settings.name == '/map_page') {
+          return MaterialPageRoute(builder: (context) => const MapPages());
+        }
+        //return MaterialPageRoute(builder: (context) => const LandingPage());
       },
     );
   }
@@ -107,8 +111,11 @@ class TenantDetail extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Action when the button is pressed
-                  print("Tampilkan peta button pressed");
+                  // print("Tampilkan peta button pressed");
                   // Add the code to navigate to map or perform any other action
+
+                  print('Navigasi ke halaman MapPage dipanggil');
+                  Navigator.pushNamed(context, '/map_page');
                 },
                 child: const Text(
                   'Tampilkan Peta',
