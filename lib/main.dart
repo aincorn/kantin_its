@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kantin_its/pages/menuList_page.dart';
 import 'pages/landing_page.dart';
+import 'pages/map_page.dart';
 
 
 void main() {
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
               tenantName: args['tenantName'],
             ),
           );
+        }
+        if (settings.name == '/map_page') {
+          return MaterialPageRoute(builder: (context) => const MapPages());
         }
         return MaterialPageRoute(builder: (context) => const LandingPage());
       },

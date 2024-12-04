@@ -210,7 +210,7 @@ class KantinText extends StatelessWidget {
         style: TextStyle(
           fontSize: 32,
           fontWeight: FontWeight.bold,
-          color: AppColors.accentColor,
+          color: AppColors.buttonLabelColorText,
         ),
       ),
     );

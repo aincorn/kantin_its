@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import '../core/configs/theme/app_color.dart';
 
 class MapPages extends StatefulWidget {
   const MapPages({Key? key}) : super(key: key);
@@ -15,7 +16,6 @@ class _MapPageState extends State<MapPages> {
   LatLng? _selectedCanteen;
   String? _canteenName;
   final MapController _mapController = MapController();
-  final TextEditingController _searchController = TextEditingController();
 
   // Dummy data lokasi kantin
   final List<Map<String, dynamic>> _canteenLocations = [
@@ -64,8 +64,7 @@ class _MapPageState extends State<MapPages> {
 
     if (permission == LocationPermission.deniedForever) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Izin lokasi ditolak secara permanen.')),
+        const SnackBar(content: Text('Izin lokasi ditolak secara permanen.')),
       );
       return;
     }
@@ -80,39 +79,30 @@ class _MapPageState extends State<MapPages> {
     });
   }
 
-  void _searchCanteen(String query) {
-    final matchedCanteen = _canteenLocations.firstWhere(
-      (canteen) => canteen['name'].toLowerCase().contains(query.toLowerCase()),
-      orElse: () => {"name": "Tidak ditemukan", "latitude": 0.0, "longitude": 0.0},
-    );
-
-    // Proses berdasarkan hasil pencarian
-    if (matchedCanteen['name'] != "Tidak ditemukan") {
-      print('Kantin ditemukan: ${matchedCanteen['name']}');
-      // Lakukan sesuatu, misalnya pindahkan peta ke lokasi kantin
-      _mapController.move(
-        LatLng(matchedCanteen['latitude'], matchedCanteen['longitude']),
-        15.0,
-      );
-    } else {
-      print('Kantin tidak ditemukan');
-      // Bisa menampilkan pesan atau melakukan aksi lain
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Peta Lokasi Kantin'),
-        backgroundColor: const Color(0xFF4872B1),
+        backgroundColor: AppColors.buttonLabelBackgroundColorCreme,
+        title: const Text(
+          'Peta Lokasi Kantin',
+          style: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: AppColors.buttonLabelColorText,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: AppColors.textThirdColor),
+        elevation: 1,
       ),
       body: Stack(
         children: [
           FlutterMap(
             mapController: _mapController,
             options: MapOptions(
-              initialCenter: _currentLocation ?? LatLng(-7.284885502334754, 112.79643059976993),
+              initialCenter:
+                  _currentLocation ?? LatLng(-7.284885502334754, 112.79643059976993),
               initialZoom: 15.0,
             ),
             children: [
@@ -120,7 +110,8 @@ class _MapPageState extends State<MapPages> {
                 urlTemplate:
                     "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}",
                 additionalOptions: const {
-                  'accessToken': 'your-mapbox-access-token',
+                  'accessToken':
+                      'sk.eyJ1IjoibmFmaXNhcnlhZGkzMiIsImEiOiJjbTQ5YzJkYngwM2dsMmpxeXAwbWE0eTd0In0.L0_7nvVOuO5_-30Z_7Pubg',
                 },
               ),
               MarkerLayer(
@@ -139,36 +130,53 @@ class _MapPageState extends State<MapPages> {
                   ..._canteenLocations.map((canteen) {
                     return Marker(
                       point: LatLng(canteen['latitude'], canteen['longitude']),
-                      child: const Icon(
-                        Icons.location_on,
-                        color: Colors.red,
-                        size: 30,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+
+                          // Icon marker
+                          const Icon(
+                            Icons.location_on,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+
+                          // Label nama kantin di samping marker
+                          Container(
+                            constraints: const BoxConstraints(
+                              maxWidth: 280, // Atur lebar maksimal untuk label
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              canteen['name'],
+                              maxLines: 1, // Batasi jumlah baris teks
+                              overflow: TextOverflow.ellipsis, // Tampilkan "..." jika teks terlalu panjang
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                            
+                        ],
                       ),
                     );
                   }).toList(),
                 ],
               ),
             ],
-          ),
-          // Search bar
-          Positioned(
-            top: 10,
-            left: 10,
-            right: 10,
-            child: TextField(
-              controller: _searchController,
-              onSubmitted: _searchCanteen,
-              decoration: InputDecoration(
-                hintText: 'Mau ke mana hari ini?',
-                prefixIcon: const Icon(Icons.search),
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
           ),
           // Informasi kantin di bawah
           if (_selectedCanteen != null)
@@ -177,7 +185,7 @@ class _MapPageState extends State<MapPages> {
               left: 0,
               right: 0,
               child: Container(
-                color: Colors.white,
+                color: AppColors.backgroundColor,
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,16 +193,16 @@ class _MapPageState extends State<MapPages> {
                     Text(
                       _canteenName ?? '',
                       style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textThirdColor),
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        // Logika navigasi
+                        // Navigasi atau logika lain
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown,
+                        backgroundColor: AppColors.buttonColor,
                       ),
                       child: const Text('Navigate'),
                     ),
